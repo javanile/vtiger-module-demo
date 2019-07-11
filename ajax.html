@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery Example</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js">
+  </script>
+  <script type="text/javascript">
+      //$(document).ready() is cross-browser
+      $(document).ready(function() {
+
+          $.ajax({
+              headers: {
+                  'X-Requested-With': 'XMLHttpRequest'
+              },
+              url: "index.php",
+              method: "POST",
+              data: {
+                  module: "Demo",
+                  view: "List",
+              },
+              success: function (resp) {
+                  console.log (resp);
+              }
+          });
+
+
+      });
+  </script>
+</head>
+<body>
+</body>
+</html>
